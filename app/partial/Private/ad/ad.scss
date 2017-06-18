@@ -1,0 +1,43 @@
+.Ad__wrapper {
+    width: 280px;
+    background-color: white;
+    padding: 10px 15px;
+    .Ad__title {
+        font-family: font1;
+        font-size: 11px;
+        color: rgb(100, 100, 100);
+        margin-bottom: 10px;
+    }
+    .Ad__list {
+        .Add__item {
+            margin-bottom: 15px;
+            cursor: pointer;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.Add__item {
+    .Item__image {
+        background-size: cover;
+        background-position: center;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    .Item__text {
+        .Text__title {
+            font-family: font9;
+            font-size: 11px;
+            margin-bottom: 3px;
+            color: rgb(70, 70, 70);
+        }
+        p {
+            font-family: font8;
+            font-size: 11px;
+            color: rgb(100, 100, 100);
+            margin: 0;
+        }
+    }
+}

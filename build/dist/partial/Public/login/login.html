@@ -1,0 +1,30 @@
+<div class="Login__wrapper" ng-controller="LoginCtrl" style="background-image: url(assets/images/company.jpg)">
+    <div class="Login__shadow">
+        <div class="Login__center">
+            <h1 class="Login__title">INGRESAR</h1>
+            <div class="Login__form">
+                <div class="Form__content">
+                    <div class="Form__input">
+                        <label for="Form__email">Email</label>
+                        <input type="text" id="Form__email" ng-model="Form.email" placeholder="Correo electronico"
+                               ng-class="{true: 'Input__error'}[Valid.email]" name="email">
+                        <span ng-show="Valid.email">* El campo de usuario no puede estar en blanco</span>
+                        <span ng-show="Valid.regex">* Debe ingresar un email valido</span>
+                    </div>
+                    <div class="Form__input">
+                        <label for="Form__password">Password</label>
+                        <input type="password" id="Form__password" ng-model="Form.password" placeholder="Contraseña"
+                               ng-class="{true: 'Input__error'}[Valid.password]" name="password">
+                        <span ng-show="Valid.password">* El campo de contraseña no puede estar en blanco</span>
+                    </div>
+                </div>
+                <div class="Form__button">
+                    <div class="Button__general Button__blue" ng-click="Events.login(Form)">
+                        <span ng-show="!Loader.login">Ingresar</span>
+                        <div class="Loader__spinner" ng-show="Loader.login"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

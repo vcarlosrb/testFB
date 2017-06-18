@@ -1,0 +1,79 @@
+<div class="Home__wrapper" ng-controller="HomeCtrl">
+    <div class="Home__write">
+        <textarea placeholder="What's on your mind?" ng-model="Form.statement"
+                  ng-class="{true: 'Input__error'}[Valid.statement]"></textarea>
+        <div class="Write__image" ng-show="Images.length > 0">
+            <div class="Image__item" ng-repeat="image in Images">
+                <div class="Item__close" ng-click="Image.cancelImage(index, Images)">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <img ng-src="{{image}}" alt="" id="Preview__image">
+            </div>
+        </div>
+        <div class="Write__options">
+            <div class="Option__photo">
+                <input type="file" id="Input__file" ng-model="File" accept="image/*"
+                       name="file" onchange="angular.element(this).scope().Image.changeInput()">
+                <i class="fa fa-camera" aria-hidden="true"></i>
+            </div>
+            <ul>
+                <li>
+                    <select ng-model="Form.type">
+                        <option value="friends">Amigos</option>
+                        <option value="public">Publico</option>
+                    </select>
+                </li>
+                <li>
+                    <div class="Button__general Button__blue" ng-click="Events.createPost(Form)">
+                        <span ng-show="!Loader.post">Publicar</span>
+                        <div class="Loader__spinner" ng-show="Loader.post"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="Home__filter">
+        <li><a href="" ng-click="Filter.type = ''">Todos</a></li>
+        <li><a href="" ng-click="Filter.type = 'public'">Publico</a></li>
+        <li><a href="" ng-click="Filter.type = 'friends'">Amigos</a></li>
+    </ul>
+    <div class="Home__posts">
+        <div class="Post__item" ng-repeat="post in Posts | filter: Filter.type">
+            <div class="Item__image" style="background-image: url(assets/images/user.jpg)"></div>
+            <div class="Item__data">
+                <h4 class="Data__name">{{post.user.firstName}} {{post.user.lastName}}</h4>
+                <span class="Data__time">{{post.created}}</span>
+                <div class="Data__text">
+                    <p ng-show="!post.edit">{{post.statement}}</p>
+                    <textarea placeholder="Edit post.." ng-show="post.edit" ng-model="post.editStatement"></textarea>
+                </div>
+                <div class="Data__image" ng-show="post.image">
+                    <img ng-src="{{post.image}}" alt="" ng-click="Modal.show(post.image)">
+                </div>
+                <ul class="Data__options" ng-show="post.edit">
+                    <li><a href="" ng-click="Events.savePost(post)">Guardar</a></li>
+                    <li><a href="" ng-click="Events.cancelEdit(post)">Cancelar</a></li>
+                </ul>
+                <ul class="Data__options" ng-show="!post.edit">
+                    <li><a href="" ng-click="Events.editPost(post)">Editar</a></li>
+                    <li><a href="" ng-click="Events.removePost(post, $index, Posts)">Eliminar</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="Empty__text" ng-show="Posts.length == 0">
+            <p>No hay publicaciones para mostrar.</p>
+        </div>
+    </div>
+    <div class="Modal Modal__image">
+        <div class="Image__shadow">
+            <div class="Image__close" ng-click="Modal.close()">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <div class="Image__center">
+                <div class="Image__content">
+                    <img src="" alt="" id="Image__modal">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

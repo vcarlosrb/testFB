@@ -1,0 +1,35 @@
+.Layout__wrapper {
+    height: 100%;
+    position: relative;
+    .Header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: $facebook;
+        height: 42px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+        z-index: 10;
+    }
+    .Layout__content {
+        padding-top: 42px;
+        background-color: #E9EBEE;
+        height: 100%;
+        overflow-y: auto;
+        .Layout__margin {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 15px 10px;
+            .Layout__panel {
+                float: left;
+            }
+            .Layout__aside {
+                float: right;
+            }
+            .Layout__variable {
+                margin-left: 200px;
+                margin-right: 300px;
+            }
+        }
+    }
+}

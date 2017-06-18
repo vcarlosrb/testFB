@@ -1,0 +1,35 @@
+<div class="Header__content" ng-controller="HeaderCtrl">
+    <div class="Header__margin">
+        <div class="Header__search">
+            <a href="" class="Header__logo"><img src="assets/images/fb_ico.jpg" alt="Facebook"></a>
+            <div class="Search__content">
+                <input type="text" placeholder="Search on Facebook">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        <div class="Header__options">
+            <ul class="Options__list">
+                <li>
+                    <a href="">
+                        <i class="fa fa-question-circle" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div class="Options__icon" ng-click="Events.toggleMenu()">
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                        </div>
+                        <div class="Options__dropdown" id="Menu">
+                            <div class="DD__bubble">
+                                <div class="Bubble__block">
+                                    <div class="Bubble__item" ng-click="Services.logout()">Logout</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>

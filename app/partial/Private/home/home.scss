@@ -1,0 +1,224 @@
+.Home__wrapper {
+    .Home__write {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 1px;
+        box-shadow: 0 0 1px rgba(0, 0, 0, .05);
+        textarea {
+            border: 1px solid rgb(230, 230, 230);
+            border-radius: 1px;
+            resize: none;
+            height: 100px;
+            width: 100%;
+            font-size: 12px;
+            font-family: font8;
+            padding: 8px 10px;
+        }
+        .Write__image {
+            overflow: hidden;
+            .Image__item {
+                display: inline-block;
+                vertical-align: top;
+                position: relative;
+                .Item__close {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    color: white;
+                    border-radius: 2px;
+                    padding: 3px 7px;
+                    background-color: rgb(100, 100, 100);
+                }
+            }
+            img {
+                max-width: 100%;
+            }
+        }
+        .Write__options {
+            text-align: right;
+            margin-top: 10px;
+            .Option__photo {
+                float: left;
+                padding: 5px 10px;
+                cursor: pointer;
+                color: rgb(150, 150, 150);
+                position: relative;
+                input {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10;
+                    opacity: 0;
+                }
+                &:hover {
+                    background-color: rgb(240, 240, 240);
+                }
+            }
+            ul {
+                li {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 5px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    .Button__general {
+                        width: 100px;
+                        height: 29px;
+                    }
+                    select {
+                        border: 1px solid rgb(230, 230, 230);
+                        background-color: rgb(240, 240, 240);
+                        height: 29px;
+                        width: 100px;
+                        font-family: font8;
+                        font-size: 12px;
+                        padding: 0 5px;
+                    }
+                }
+            }
+        }
+    }
+    .Home__filter {
+        margin-bottom: 10px;
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 5px;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                display: block;
+                font-family: font9;
+                font-size: 12px;
+                text-decoration: underline;
+            }
+        }
+    }
+    .Home__posts {
+        .Post__item {
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.Post__item {
+    padding: 10px;
+    background-color: white;
+    min-height: 40px;
+    .Item__image {
+        width: 40px;
+        height: 40px;
+        border-radius: 2px;
+        background-position: center;
+        background-size: cover;
+        float: left;
+    }
+    .Item__data {
+        margin-left: 55px;
+        .Data__image {
+            img {
+                max-width: 100%;
+            }
+        }
+        .Data__name {
+            font-size: 12px;
+            color: rgb(70, 70, 70);
+            margin-bottom: 4px;
+            font-family: font9;
+        }
+        .Data__time {
+            display: block;
+            font-family: font8;
+            font-size: 11px;
+            margin-bottom: 10px;
+            color: rgb(120, 120, 120);
+        }
+        .Data__text {
+            p {
+                font-family: font8;
+                font-size: 12px;
+                color: rgb(100, 100, 100);
+            }
+            textarea {
+                width: 100%;
+                height: 70px;
+                resize: none;
+                padding: 10px 12px;
+                font-size: 12px;
+                color: rgb(70, 70, 70);
+                border: 1px solid rgb(230, 230, 230);
+            }
+        }
+        .Data__options {
+            margin-top: 10px;
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 5px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                a {
+                    text-decoration: underline;
+                    display: block;
+                    font-family: font8;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+.Modal {
+    display: none;
+}
+
+.Modal__image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    .Image__shadow {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .65);
+        position: relative;
+        .Image__close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0 7px;
+            color: #464646;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .Image__center {
+            position: absolute;
+            top: 50%;
+            @include transform(translateY(-50%));
+            width: 100%;
+            text-align: center;
+            .Image__content {
+                padding: 20px;
+                display: inline-block;
+                text-align: center;
+                background-color: black;
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+}

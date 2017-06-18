@@ -1,0 +1,65 @@
+@import "partial/Private/ad/ad.scss";
+@import "partial/Private/panel/panel.scss";
+/* Required for Angular UI Bootstrap */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+@import "assets/mixins/variables";
+@import "assets/mixins/responsive";
+@import "assets/mixins/animations";
+@import "assets/mixins/fonts";
+@import "assets/mixins/components";
+/************** RESETS *****************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+html,
+li,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+h1 img {
+    display: block;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nf {
+    clear: both;
+}
+
+button,
+input,
+select,
+textarea {
+    outline: none;
+    border: none;
+}
+
+/*********** STYLE ************/
+body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+html, body, .Wrapper {
+    height: 100%;
+}
+
+/* Component SCSS */
+@import "partial/Public/login/login.scss";
+@import "partial/Private/header/header.scss";
+@import "partial/Private/layout/layout.scss";
+@import "partial/Private/home/home.scss";
